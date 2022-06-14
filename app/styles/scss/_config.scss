@@ -1,0 +1,229 @@
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		src: url($furl) format('woff2')
+	}
+}
+
+
+
+$icomoon-font-family: "mlh" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$arrow: "\e900";
+$arrow-bottom: "\e90e";
+$search: "\e901";
+$arrow-left: "\e902";
+$arrow-right: "\e903";
+$facebook: "\e904";
+$instagram: "\e905";
+$linkedin: "\e906";
+$youtube: "\e907";
+$slack: "\e908";
+$twitter: "\e909";
+$email: "\e90a";
+$facebook-2: "\e90b";
+$ok: "\e90c";
+$arrow-right-big: "\e90d";
+
+@font-face {
+	font-family: '#{$icomoon-font-family}';
+	src:
+					url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?94dr7h') format('truetype'),
+					url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?94dr7h') format('woff'),
+					url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?94dr7h##{$icomoon-font-family}') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.mlh {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: '#{$icomoon-font-family}' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.arrow {
+	&:before {
+		content: $arrow;
+	}
+}
+
+.arrow-bottom {
+	&:before {
+		content: $arrow-bottom;
+	}
+}
+
+.arrow-left {
+	&:before {
+		content: $arrow-left;
+	}
+}
+
+.arrow-right {
+	&:before {
+		content: $arrow-right;
+	}
+}
+
+.search-icon {
+	&:before {
+		content: $search;
+	}
+}
+
+.facebook {
+	&:before {
+		content: $facebook;
+		color: #bfbfbf;
+	}
+}
+.instagram {
+	&:before {
+		content: $instagram;
+		color: #bfbfbf;
+	}
+}
+.linkedin {
+	&:before {
+		content: $linkedin;
+		color: #bfbfbf;
+	}
+}
+.youtube {
+	&:before {
+		content: $youtube;
+		color: #bfbfbf;
+	}
+}
+.slack {
+	&:before {
+		content: $slack;
+	}
+}
+.twitter {
+	&:before {
+		content: $twitter;
+	}
+}
+.email {
+	&:before {
+		content: $email;
+	}
+}
+.facebook-2 {
+	&:before {
+		content: $facebook-2;
+	}
+}
+.ok {
+	&:before {
+		content: $ok;
+	}
+}
+
+.arrow-right-big {
+	&:before {
+		content: $arrow-right-big;
+	}
+}
+
+h1, h2, h3, h4, h5 {
+	margin-bottom: 0;
+}
+
+
+%header {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+%content {
+	max-width: 1200px;
+	margin: 0 auto;
+
+	@media screen and (max-width: 1264px) {
+		padding: 0 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 0 16px;
+	}
+}
+
+%indent {
+	padding: 0 40px;
+
+	@include media-breakpoint-down(xl) {
+		padding: 0 20px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 0 16px;
+	}
+}
+
+%small-text {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+%bold-text {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-feature-settings: "smcp";
+}
+
+// GENERAL DOCUMENT STYLES
+::placeholder {
+	color: #666
+}
+
+
+input, textarea {
+	outline: none;
+	&:focus:required:invalid {
+		border-color: red
+
+	}
+	&:required:valid {
+		border-color: green
+	}
+}
+
+body {
+	@extend %small-text;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	color: #2B2A34;
+
+	font-feature-settings: "tnum";
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
